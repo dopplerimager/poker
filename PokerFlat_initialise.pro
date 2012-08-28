@@ -27,7 +27,8 @@ end
 
 ;\\ CALIBRATION SWITCH ROUTINES
 pro PokerFlat_switch, source, $
-				  	  misc, console
+				  	  misc, console, $
+				  	  home = home
 
 
 
