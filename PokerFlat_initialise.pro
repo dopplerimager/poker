@@ -12,7 +12,7 @@ pro PokerFlat_mirror,  drive_to_pos = drive_to_pos, $
 				  home_motor = home_motor, $
 				  read_pos = read_pos,  $
 				  misc, console
-
+;print, drive_to_pos
 	if keyword_set(drive_to_pos) then begin
 		comms_wrapper, 3, misc.dll_name, type='dio', /dio_write8, data = drive_to_pos, errcode=errcode
 		wait, 0.5
