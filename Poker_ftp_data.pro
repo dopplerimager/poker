@@ -8,9 +8,11 @@ common data_xfer_semaphore, xfer_tstamp
 	if jsnow - xfer_tstamp lt 12d*3600d and not(keyword_set(force)) then return
 	xfer_tstamp = jsnow
 
-	data_transfer, data_dir = 'c:\users\sdi3000\data\', $
-				   sent_dir = 'c:\users\sdi3000\data\sent\', $
-	 			   site = 'PKR'
+	command_string = 'idlde -e "data_transfer, ' + "data_dir = 'c:\users\sdi3000\data\', " + $
+				   		"sent_dir = 'c:\users\sdi3000\data\sent\', " + $
+				   		"ftp_command = 'psftp 137.229.27.190 -l instrument -pw aer0n0my', " + $
+	 			   		"site = 'PKR'" + '"'
+	spawn, command_string, /nowait
 
 ;       ftp_script = 'c:\SDI_ftp_script.ftp'
 ;       openw, spunt, ftp_script, /get_lun
