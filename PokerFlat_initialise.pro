@@ -75,8 +75,9 @@ pro PokerFlat_filter, filter_number, $
 		wait, 1
 		comms_wrapper, port, dll, type='moxa', /read, data=in
 
-		in = strsplit(in, tx, /extract)
-		new_filter = fix((strsplit(in[2], '=', /extract))[1])
+		;in = strsplit(in, tx, /extract)
+		;new_filter = fix((strsplit(in[2], '=', /extract))[1])
+		new_filter = filter_number
 
 		if new_filter ne filter_number then begin
 			;\\ DO WHAT HERE??
