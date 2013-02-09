@@ -14,7 +14,7 @@ common data_xfer_semaphore, xfer_tstamp
 
 	command_string = 'idlde -e "data_transfer, ' + "data_dir = 'c:\users\sdi3000\data\', " + $
 				   		"sent_dir = 'c:\users\sdi3000\data\sent\', " + $
-				   		"ftp_command = 'psftp 137.229.27.190 -l poker -pw aer0n0my', " + $
+				   		"ftp_command = 'poker:aer0n0my@137.229.27.190', " + $
 	 			   		"site = 'PKR'" + '"'
 	spawn, command_string, /nowait
 
